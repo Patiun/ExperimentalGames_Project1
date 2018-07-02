@@ -91,8 +91,8 @@ public class SquishFinder : MonoBehaviour {
     {
         center = new Vector3(Screen.width / 2f, Screen.height / 2f, distFromCamera);
         point = Camera.main.WorldToScreenPoint(point);
-        //w = Screen.width * detectionSize;
-        //h = w;
+        w = Screen.width * detectionSize;
+        h = w;
         bool xGood = (point.x <= center.x + w/2f && point.x >= center.x - w/2f);
         bool yGood = (point.y <= center.y + h / 2f && point.y >= center.y - h / 2f);
         return (xGood && yGood);
