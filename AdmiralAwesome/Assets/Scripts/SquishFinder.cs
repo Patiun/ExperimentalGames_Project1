@@ -16,6 +16,7 @@ public class SquishFinder : MonoBehaviour {
     public bool canSquish;
     public float squishRate;
     public LayerMask layerMask;
+    public float radius;
 
     private float nextSquishTime;
 
@@ -28,11 +29,45 @@ public class SquishFinder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time >= nextSquishTime && Input.GetAxis("Fire1") != 0)
+        RaycastHit hit;
+        if (Physics.SphereCast(transform.position,radius, transform.forward,out hit,Mathf.Infinity,layerMask.value))
+        {
+            GameObject other = hit.collider.gameObject;
+            iSquashable enemy = other.GetComponent<BasicEnemy>();
+            if (enemy != null)
+            {
+                if (enemy.CanSquash())
+                {
+                    EnableSquashIndicator();
+                    canSquish = true;
+                    curTarget = other.gameObject;
+                    //Debug.Log("Can Squash");
+                }
+                else
+                {
+                    canSquish = false;
+                }
+            }
+            else
+            {
+                canSquish = false;
+            }
+        } else
+        {
+            canSquish = false;
+        }
+        if (Time.time >= nextSquishTime)
         {
             if (canSquish)
             {
-                Squash();
+                EnableSquashIndicator();
+                if (Input.GetAxis("Fire1") != 0)
+                {
+                    Squash();
+                }
+            } else
+            {
+                DisableSquashIndicator();
             }
         }
 	}
@@ -51,6 +86,7 @@ public class SquishFinder : MonoBehaviour {
         return (xGood && yGood);
     }
 
+    /*
     public void OnTriggerEnter(Collider other)
     {
         //Debug.Log("!");
@@ -69,17 +105,17 @@ public class SquishFinder : MonoBehaviour {
                 }
                 else
                 {
-                    DisableSquashIndicator();
+                    canSquish = false;
                 }
             }
             else
             {
-                DisableSquashIndicator();
+                canSquish = false;
             }
         }
         else
         {
-            DisableSquashIndicator();
+            canSquish = false;
         }
     }
 
@@ -100,19 +136,19 @@ public class SquishFinder : MonoBehaviour {
                 }
                 else
                 {
-                    DisableSquashIndicator();
+                    canSquish = false;
                 }
             }
             else
             {
-                DisableSquashIndicator();
+                canSquish = false;
             }
         }
         else
         {
-            DisableSquashIndicator();
+            canSquish = false;
         }
-    }
+    }*/
 
     public void OnTriggerExit(Collider other)
     {

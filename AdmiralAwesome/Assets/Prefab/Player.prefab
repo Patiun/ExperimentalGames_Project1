@@ -661,6 +661,11 @@ MonoBehaviour:
   squashIndicator: {fileID: 114644343422826866}
   curTarget: {fileID: 0}
   canSquish: 0
+  squishRate: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1537
+  radius: 5
 --- !u!114 &114890624859784624
 MonoBehaviour:
   m_ObjectHideFlags: 1

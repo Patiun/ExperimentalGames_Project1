@@ -49,9 +49,11 @@ public class EnemySpawner : MonoBehaviour {
     private void Spawn()
     {
         float value = Random.Range(0, 100f);
+        float total = 0;
         for (int i = 0; i < floors.Length; i++)
         {
-            if (value < floors[i])
+            total += floors[i];
+            if (value < total)
             {
                 GameObject enemy = pooler.SpawnFromPool(spawnData[i].poolTag, transform.position, Quaternion.identity);
                 break;

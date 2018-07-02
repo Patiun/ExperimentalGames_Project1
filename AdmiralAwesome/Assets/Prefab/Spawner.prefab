@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1135407939168832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.9, y: 0.49, z: -0.17}
+  m_LocalPosition: {x: 48.8, y: 0.49, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,8 +112,8 @@ MonoBehaviour:
   spawnData:
   - poolTag: Huge_Enemy
     weight: 2
+  - poolTag: Giant_Enemy
+    weight: 2
   - poolTag: Basic_Enemy
     weight: 6
-  - poolTag: Giant_Enemy
-    weight: 1
   spawnRate: 1
