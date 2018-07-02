@@ -56,6 +56,10 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
 
     public void Squash()
     {
+        if (game == null)
+        {
+            game = GameController._sharedInstance;
+        }
         game.AddScore(scoreValue);
         pooler.SpawnFromPool("Explosion", transform.position + transform.forward, Quaternion.identity);
         gameObject.SetActive(false);
