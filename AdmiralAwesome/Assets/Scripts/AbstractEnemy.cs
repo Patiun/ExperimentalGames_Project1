@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class AbstractEnemy : MonoBehaviour {
 
     public Vector3 p1, p2, p3, p4;
     private GameObject g1, g2, g3, g4;
     protected SpriteRenderer spriteRenderer;
+    protected NavMeshAgent agent;
 
 	// Use this for initialization
 	void Start () {
@@ -21,11 +23,13 @@ public abstract class AbstractEnemy : MonoBehaviour {
         Debug.DrawLine(transform.position, p3);
         Debug.DrawLine(transform.position, p4);
 
+        agent.SetDestination(Camera.main.transform.position);
         transform.LookAt(Camera.main.transform.position);
     }
 
     protected void Init()
     {
+        agent = GetComponent<NavMeshAgent>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Vector3 max = spriteRenderer.bounds.max;
         Vector3 min = spriteRenderer.bounds.min;
@@ -46,6 +50,8 @@ public abstract class AbstractEnemy : MonoBehaviour {
         g4 = new GameObject("g4");
         g4.transform.parent = transform;
         g4.transform.position = p4;
+
+        agent.SetDestination(Camera.main.transform.position);
     }
 
     private void GeneratePoints()

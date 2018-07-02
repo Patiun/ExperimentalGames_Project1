@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SquishFinder : MonoBehaviour {
 
@@ -10,6 +11,9 @@ public class SquishFinder : MonoBehaviour {
     public Vector3 center;
     public SpriteRenderer marker;
     public float distFromCamera;
+    public Image squashIndicator;
+    public GameObject curTarget;
+    public bool canSquish;
 
     // Use this for initialization
     void Start () {
@@ -19,8 +23,19 @@ public class SquishFinder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetAxis("Fire1") != 0)
+        {
+            if (canSquish)
+            {
+                Squash();
+            }
+        }
 	}
+
+    public void Squash()
+    {
+        curTarget.GetComponent<iSquashable>().Squash();
+    }
 
     public bool CheckPoint(Vector3 point)
     {
@@ -32,18 +47,56 @@ public class SquishFinder : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("!");
-        if (other.GetComponent<BasicEnemy>().CanSquash())
+        //Debug.Log("!");
+        iSquashable enemy = other.GetComponent<BasicEnemy>();
+        if (enemy != null)
         {
-            Debug.Log("Can Squash");
+            if (enemy.CanSquash())
+            {
+                EnableSquashIndicator();
+                canSquish = true;
+                curTarget = other.gameObject;
+                //Debug.Log("Can Squash");
+            }
+            else
+            {
+                DisableSquashIndicator();
+            }
         }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<BasicEnemy>().CanSquash())
+        iSquashable enemy = other.GetComponent<BasicEnemy>();
+        if (enemy != null)
         {
-            Debug.Log("Can Squash");
+            if (enemy.CanSquash())
+            {
+                EnableSquashIndicator();
+                canSquish = true;
+                curTarget = other.gameObject;
+                // Debug.Log("Can Squash");
+            }
+            else
+            {
+                DisableSquashIndicator();
+            }
         }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        DisableSquashIndicator();
+        canSquish = false;
+    }
+
+    void EnableSquashIndicator()
+    {
+        squashIndicator.enabled = true;
+    }
+
+    void DisableSquashIndicator()
+    {
+        squashIndicator.enabled = false;
     }
 }

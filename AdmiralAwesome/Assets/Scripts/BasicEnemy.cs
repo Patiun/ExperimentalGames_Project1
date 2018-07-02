@@ -6,7 +6,7 @@ public class BasicEnemy : AbstractEnemy, iSquashable{
 
 	// Use this for initialization
 	void Start () {
-        Init();
+        base.Init();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +23,6 @@ public class BasicEnemy : AbstractEnemy, iSquashable{
 
     public void Squash()
     {
-
+        Debug.Log("Got Squashed");
     }
 }
