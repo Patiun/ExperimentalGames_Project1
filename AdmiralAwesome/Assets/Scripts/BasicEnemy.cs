@@ -7,6 +7,7 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
     public bool allowedToShoot;
     public float fireRate;
     public LayerMask layerMask;
+    public float fireRange;
 
     private float nextFireTime;
     private ObjectPooler pooler;
@@ -22,6 +23,10 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
         base.Update();
         if (allowedToShoot)
         {
+            if (agent.remainingDistance <= fireRange)
+            {
+                agent.isStopped = true;
+            }
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward,out hit, Mathf.Infinity,layerMask.value))
             {

@@ -33,7 +33,7 @@ public class SquishFinder : MonoBehaviour {
         if (Physics.SphereCast(transform.position,radius, transform.forward,out hit,Mathf.Infinity,layerMask.value))
         {
             GameObject other = hit.collider.gameObject;
-            iSquashable enemy = other.GetComponent<BasicEnemy>();
+            iSquashable enemy = other.GetComponent<iSquashable>();
             if (enemy != null)
             {
                 if (enemy.CanSquash())

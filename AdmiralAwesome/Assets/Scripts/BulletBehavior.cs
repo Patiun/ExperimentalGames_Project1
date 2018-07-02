@@ -83,6 +83,7 @@ public class BulletBehavior : MonoBehaviour, iSquashable, IPooledObject {
         timeToDie = Time.time + timeAllowedToExist;
         transform.LookAt(Camera.main.transform);
         GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        Init();
     }
 
     public void OnCollisionEnter(Collision collision)
