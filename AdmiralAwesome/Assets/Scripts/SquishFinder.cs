@@ -14,16 +14,20 @@ public class SquishFinder : MonoBehaviour {
     public Image squashIndicator;
     public GameObject curTarget;
     public bool canSquish;
+    public float squishRate;
+
+    private float nextSquishTime;
 
     // Use this for initialization
     void Start () {
         _sharedInstance = this;
+        nextSquishTime = Time.time;
         center = new Vector3(Screen.width / 2f, Screen.height / 2f, distFromCamera);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetAxis("Fire1") != 0)
+		if (Time.time >= nextSquishTime && Input.GetAxis("Fire1") != 0)
         {
             if (canSquish)
             {
@@ -35,6 +39,7 @@ public class SquishFinder : MonoBehaviour {
     public void Squash()
     {
         curTarget.GetComponent<iSquashable>().Squash();
+        nextSquishTime = Time.time + 1f / squishRate;
     }
 
     public bool CheckPoint(Vector3 point)

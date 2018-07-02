@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : AbstractEnemy, iSquashable{
+public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
 
 	// Use this for initialization
 	void Start () {
@@ -24,5 +24,11 @@ public class BasicEnemy : AbstractEnemy, iSquashable{
     public void Squash()
     {
         Debug.Log("Got Squashed");
+        gameObject.SetActive(false);
+    }
+
+    public void OnObjectSpawn()
+    {
+        base.Init();
     }
 }
