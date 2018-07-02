@@ -8,14 +8,17 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
     public float fireRate;
     public LayerMask layerMask;
     public float fireRange;
+    public int scoreValue;
 
     private float nextFireTime;
     private ObjectPooler pooler;
+    private GameController game;
 
     // Use this for initialization
     void Start () {
         base.Init();
         pooler = ObjectPooler._sharedInstance;
+        game = GameController._sharedInstance;
 	}
 	
 	// Update is called once per frame
@@ -53,7 +56,7 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
 
     public void Squash()
     {
-        Debug.Log("Got Squashed");
+        game.AddScore(scoreValue);
         gameObject.SetActive(false);
     }
 

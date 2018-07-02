@@ -977,13 +977,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score:'
+  m_Text: 'Score: 0'
 --- !u!222 &594728756
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1249,6 +1249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 971387095}
   - component: {fileID: 971387096}
+  - component: {fileID: 971387097}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1282,6 +1283,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Tracked: {fileID: 0}
   m_Size: {x: 100, y: 20, z: 100}
+--- !u!114 &971387097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971387094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9daaa3dcbfeacaa489ab9e2b0434154a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 0}
+  health: {fileID: 0}
 --- !u!1 &1099594878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,7 +2276,7 @@ Canvas:
   m_GameObject: {fileID: 1931581822}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 225767200}
   m_PlaneDistance: 0.32
   m_PixelPerfect: 0
