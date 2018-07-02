@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering.PostProcessing;
+using UnityStandardAssets;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameController : MonoBehaviour {
 
@@ -16,6 +18,8 @@ public class GameController : MonoBehaviour {
     public PostProcessVolume postProcessing;
     public GameObject HUD;
     public GameObject GameOverMenu;
+    public Text gameOverScore;
+    public FirstPersonController fpc;
 
     private int scoreAmount;
     private float healthPercentage;
@@ -34,6 +38,7 @@ public class GameController : MonoBehaviour {
     {
         scoreAmount += amount;
         score.text = "Score: " + scoreAmount;
+        gameOverScore.text = "Carpal Tunnel Score: " + scoreAmount;
     }
 
     public void UpdateHealth(float amnt)
@@ -56,5 +61,8 @@ public class GameController : MonoBehaviour {
         Time.timeScale = 0f;
         HUD.SetActive(false);
         GameOverMenu.SetActive(true);
+        fpc.enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

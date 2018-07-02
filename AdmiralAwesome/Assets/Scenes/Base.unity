@@ -1679,6 +1679,8 @@ MonoBehaviour:
   postProcessing: {fileID: 954474957}
   HUD: {fileID: 1931581822}
   GameOverMenu: {fileID: 1180038433}
+  gameOverScore: {fileID: 1205878971}
+  fpc: {fileID: 444507405}
 --- !u!1 &1099594878
 GameObject:
   m_ObjectHideFlags: 0
