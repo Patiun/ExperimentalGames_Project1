@@ -86,6 +86,13 @@ MonoBehaviour:
   p2: {x: 0, y: 0, z: 0}
   p3: {x: 0, y: 0, z: 0}
   p4: {x: 0, y: 0, z: 0}
+  allowedToShoot: 0
+  fireRate: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  fireRange: 0
+  scoreValue: 100
 --- !u!195 &195121737035046992
 NavMeshAgent:
   m_ObjectHideFlags: 1

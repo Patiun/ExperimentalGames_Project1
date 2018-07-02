@@ -141,6 +141,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 9729
   fireRange: 6
+  scoreValue: 50
 --- !u!195 &195193045112116976
 NavMeshAgent:
   m_ObjectHideFlags: 1
