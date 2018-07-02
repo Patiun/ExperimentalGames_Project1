@@ -117,3 +117,4 @@ MonoBehaviour:
   - poolTag: Basic_Enemy
     weight: 6
   spawnRate: 0.2
+  spawnRampingRate: 0.01
