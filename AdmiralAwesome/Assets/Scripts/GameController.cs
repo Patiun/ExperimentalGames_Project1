@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering.PostProcessing;
 
 public class GameController : MonoBehaviour {
 
@@ -9,6 +11,11 @@ public class GameController : MonoBehaviour {
 
     public Text score;
     public Image health;
+    public Vector3 vignetteScale;
+    public Color vignetteColor;
+    public PostProcessVolume postProcessing;
+    public GameObject HUD;
+    public GameObject GameOverMenu;
 
     private int scoreAmount;
     private float healthPercentage;
@@ -32,5 +39,22 @@ public class GameController : MonoBehaviour {
     public void UpdateHealth(float amnt)
     {
         health.fillAmount = amnt;
+        vignetteScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(255, 0, 0), 1 - amnt);
+        vignetteColor = new Color(vignetteScale.x, vignetteScale.y, vignetteScale.z,1f);
+        /*
+        Vignette v;
+        postProcessing.profile.TryGetSettings(out v);
+        if (v!=null)
+        {
+            ColorParameter cp = v.color;
+            cp.value = vignetteColor;
+        }*/
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        HUD.SetActive(false);
+        GameOverMenu.SetActive(true);
     }
 }

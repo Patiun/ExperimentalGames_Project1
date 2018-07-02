@@ -22,16 +22,21 @@ public class PlayerController : MonoBehaviour {
 
     public void Damage(int amount)
     {
+        if (game == null)
+        {
+            game = GameController._sharedInstance;
+        }
         health -= amount;
         if (health <= 0)
         {
             health = 0;
             Die();
         }
+        game.UpdateHealth((float)(health) / (float)(maxHealth));
     }
 
     public void Die()
     {
-
+        game.GameOver();
     }
 }
