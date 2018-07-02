@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public int health;
     public int maxHealth;
+    public bool immortal;
 
     private GameController game;
 
@@ -22,17 +23,20 @@ public class PlayerController : MonoBehaviour {
 
     public void Damage(int amount)
     {
-        if (game == null)
+        if (!immortal)
         {
-            game = GameController._sharedInstance;
+            if (game == null)
+            {
+                game = GameController._sharedInstance;
+            }
+            health -= amount;
+            if (health <= 0)
+            {
+                health = 0;
+                Die();
+            }
+            game.UpdateHealth((float)(health) / (float)(maxHealth));
         }
-        health -= amount;
-        if (health <= 0)
-        {
-            health = 0;
-            Die();
-        }
-        game.UpdateHealth((float)(health) / (float)(maxHealth));
     }
 
     public void Die()
