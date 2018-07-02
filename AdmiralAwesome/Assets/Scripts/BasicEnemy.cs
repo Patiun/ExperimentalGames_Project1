@@ -26,6 +26,9 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
             if (agent.remainingDistance <= fireRange)
             {
                 agent.isStopped = true;
+            } else
+            {
+                agent.isStopped = false;
             }
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward,out hit, Mathf.Infinity,layerMask.value))
