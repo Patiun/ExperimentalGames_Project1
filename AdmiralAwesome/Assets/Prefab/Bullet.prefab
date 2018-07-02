@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
-  damage: 1
+  damage: 10
   timeAllowedToExist: 10
 --- !u!135 &135468258602481630
 SphereCollider:
