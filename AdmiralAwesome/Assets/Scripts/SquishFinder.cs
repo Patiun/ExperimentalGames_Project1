@@ -7,6 +7,7 @@ public class SquishFinder : MonoBehaviour {
 
     public static SquishFinder _sharedInstance;
 
+    public float detectionSize;
     public float w, h;
     public Vector3 center;
     public SpriteRenderer marker;
@@ -28,7 +29,7 @@ public class SquishFinder : MonoBehaviour {
     void Start () {
         _sharedInstance = this;
         nextSquishTime = Time.time;
-        center = new Vector3(Screen.width / 2f, Screen.height / 2f, distFromCamera);
+        
 
         //Anim
         handAnim = animObject.GetComponent<Animator>();
@@ -88,7 +89,10 @@ public class SquishFinder : MonoBehaviour {
 
     public bool CheckPoint(Vector3 point)
     {
+        center = new Vector3(Screen.width / 2f, Screen.height / 2f, distFromCamera);
         point = Camera.main.WorldToScreenPoint(point);
+        //w = Screen.width * detectionSize;
+        //h = w;
         bool xGood = (point.x <= center.x + w/2f && point.x >= center.x - w/2f);
         bool yGood = (point.y <= center.y + h / 2f && point.y >= center.y - h / 2f);
         return (xGood && yGood);

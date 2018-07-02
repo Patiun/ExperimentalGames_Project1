@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdce1b3dae718445b256cd08c465a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionSize: 0.25
   w: 200
   h: 220
   center: {x: 0, y: 0, z: 0}
@@ -322,7 +323,7 @@ MonoBehaviour:
   squishRate: 10
   layerMask:
     serializedVersion: 2
-    m_Bits: 5633
+    m_Bits: 1537
   radius: 0.2
   animObject: {fileID: 1815795452}
 --- !u!4 &196765003
@@ -587,7 +588,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228770627}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1752,7 +1753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 433.5, y: -327.9}
+  m_AnchoredPosition: {x: 433.5, y: -327.90002}
   m_SizeDelta: {x: 609.09094, y: 577.2727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1815795454
