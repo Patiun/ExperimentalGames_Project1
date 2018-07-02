@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour {
     public bool isSpawning;
     public List<EnemySpawnData> spawnData;
     public float spawnRate;
+    public float spawnRampingRate;
 
     private float scale;
     private float[] floors;
@@ -60,5 +61,6 @@ public class EnemySpawner : MonoBehaviour {
             }
         }
         nextSpawnTime = Time.time + 1f / spawnRate;
+        spawnRate += spawnRampingRate;
     }
 }
