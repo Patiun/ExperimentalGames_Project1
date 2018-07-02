@@ -15,6 +15,7 @@ public class SquishFinder : MonoBehaviour {
     public GameObject curTarget;
     public bool canSquish;
     public float squishRate;
+    public LayerMask layerMask;
 
     private float nextSquishTime;
 
@@ -53,39 +54,63 @@ public class SquishFinder : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         //Debug.Log("!");
-        iSquashable enemy = other.GetComponent<BasicEnemy>();
-        if (enemy != null)
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position,transform.forward,out hit,Mathf.Infinity,layerMask.value))
         {
-            if (enemy.CanSquash())
+            iSquashable enemy = other.GetComponent<BasicEnemy>();
+            if (enemy != null)
             {
-                EnableSquashIndicator();
-                canSquish = true;
-                curTarget = other.gameObject;
-                //Debug.Log("Can Squash");
+                if (enemy.CanSquash())
+                {
+                    EnableSquashIndicator();
+                    canSquish = true;
+                    curTarget = other.gameObject;
+                    //Debug.Log("Can Squash");
+                }
+                else
+                {
+                    DisableSquashIndicator();
+                }
             }
             else
             {
                 DisableSquashIndicator();
             }
         }
+        else
+        {
+            DisableSquashIndicator();
+        }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        iSquashable enemy = other.GetComponent<BasicEnemy>();
-        if (enemy != null)
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, layerMask.value))
         {
-            if (enemy.CanSquash())
+            iSquashable enemy = other.GetComponent<BasicEnemy>();
+            if (enemy != null)
             {
-                EnableSquashIndicator();
-                canSquish = true;
-                curTarget = other.gameObject;
-                // Debug.Log("Can Squash");
+                if (enemy.CanSquash())
+                {
+                    EnableSquashIndicator();
+                    canSquish = true;
+                    curTarget = other.gameObject;
+                    //Debug.Log("Can Squash");
+                }
+                else
+                {
+                    DisableSquashIndicator();
+                }
             }
             else
             {
                 DisableSquashIndicator();
             }
+        }
+        else
+        {
+            DisableSquashIndicator();
         }
     }
 
