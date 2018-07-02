@@ -4,14 +4,36 @@ using UnityEngine;
 
 public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
 
-	// Use this for initialization
-	void Start () {
+    public bool allowedToShoot;
+    public float fireRate;
+    public LayerMask layerMask;
+
+    private float nextFireTime;
+    private ObjectPooler pooler;
+
+    // Use this for initialization
+    void Start () {
         base.Init();
+        pooler = ObjectPooler._sharedInstance;
 	}
 	
 	// Update is called once per frame
 	new void Update () {
         base.Update();
+        if (allowedToShoot)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward,out hit, Mathf.Infinity,layerMask.value))
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    if (Time.time > nextFireTime)
+                    {
+                        Fire();
+                    }
+                }
+            }
+        }
 	}
 
     public bool CanSquash()
@@ -30,5 +52,12 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
     public void OnObjectSpawn()
     {
         base.Init();
+        nextFireTime = Time.time;
+    }
+
+    private void Fire()
+    {
+        pooler.SpawnFromPool("Bullet", transform.position+transform.forward, Quaternion.identity);
+        nextFireTime = Time.time + 1f / fireRate;
     }
 }

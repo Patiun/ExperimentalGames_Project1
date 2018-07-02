@@ -17,8 +17,8 @@ TagManager:
   - Enemy
   - Obstacle
   - Floor
-  - 
-  - 
+  - Bullet
+  - Player
   - 
   - 
   - 

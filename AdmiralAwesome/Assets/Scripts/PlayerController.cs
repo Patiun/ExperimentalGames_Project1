@@ -4,34 +4,31 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public float moveSpeed;
-
-    private Rigidbody rb;
+    public int health;
+    public int maxHealth;
 
 	// Use this for initialization
 	void Start () {
-        rb = GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            rb = gameObject.AddComponent<Rigidbody>();
-            rb.useGravity = false;
-        }
+        health = maxHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        MoveX(Input.GetAxis("Horizontal"));
-        MoveZ(Input.GetAxis("Vertical"));
 
     }
 
-    public void MoveX(float amnt)
+    public void Damage(int amount)
     {
-        rb.velocity = transform.right * amnt * moveSpeed;
+        health -= amount;
+        if (health <= 0)
+        {
+            health = 0;
+            Die();
+        }
     }
 
-    public void MoveZ(float amnt)
+    public void Die()
     {
-        rb.velocity = transform.forward * amnt * moveSpeed;
+
     }
 }
