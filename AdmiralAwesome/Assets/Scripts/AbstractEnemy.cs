@@ -51,6 +51,7 @@ public abstract class AbstractEnemy : MonoBehaviour {
         g4.transform.parent = transform;
         g4.transform.position = p4;
 
+        agent.Warp(transform.position);
         agent.SetDestination(Camera.main.transform.position);
     }
 

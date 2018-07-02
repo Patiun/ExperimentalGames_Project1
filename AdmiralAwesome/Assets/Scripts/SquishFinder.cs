@@ -20,11 +20,18 @@ public class SquishFinder : MonoBehaviour {
 
     private float nextSquishTime;
 
+    //ANIM
+    public GameObject animObject;
+    Animator handAnim;
+
     // Use this for initialization
     void Start () {
         _sharedInstance = this;
         nextSquishTime = Time.time;
         center = new Vector3(Screen.width / 2f, Screen.height / 2f, distFromCamera);
+
+        //Anim
+        handAnim = animObject.GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -64,6 +71,7 @@ public class SquishFinder : MonoBehaviour {
                 if (Input.GetAxis("Fire1") != 0)
                 {
                     Squash();
+                    handAnim.SetTrigger("pinch"); //Anim
                 }
             } else
             {
