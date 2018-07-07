@@ -50,7 +50,7 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
     public bool CanSquash()
     {
         SquishFinder sf = SquishFinder._sharedInstance;
-        //Debug.Log((sf.CheckPoint(p1) + "," + sf.CheckPoint(p2) + "," + sf.CheckPoint(p3) + "," + sf.CheckPoint(p4)));
+        Debug.Log((sf.CheckPoint(p1) + "," + sf.CheckPoint(p2) + "," + sf.CheckPoint(p3) + "," + sf.CheckPoint(p4)));
         return (sf.CheckPoint(p1)&&sf.CheckPoint(p2)&&sf.CheckPoint(p3)&&sf.CheckPoint(p4));
     }
 

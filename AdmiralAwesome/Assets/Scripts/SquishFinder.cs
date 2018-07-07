@@ -9,6 +9,7 @@ public class SquishFinder : MonoBehaviour {
 
     public float detectionSize;
     public float w, h;
+    public float tolerance;
     public Vector3 center;
     public SpriteRenderer marker;
     public float distFromCamera;
@@ -93,8 +94,8 @@ public class SquishFinder : MonoBehaviour {
         point = Camera.main.WorldToScreenPoint(point);
         w = Screen.width * detectionSize;
         h = w;
-        bool xGood = (point.x <= center.x + w/2f && point.x >= center.x - w/2f);
-        bool yGood = (point.y <= center.y + h / 2f && point.y >= center.y - h / 2f);
+        bool xGood = (point.x <= center.x + w/2f && point.x >= center.x + (w*tolerance)/2f) || (point.x <= center.x - (w*tolerance) / 2f && point.x >= center.x - w / 2f);
+        bool yGood = (point.y <= center.y + h / 2f && point.y >= center.y + (h * tolerance) / 2f) || (point.y <= center.y - (h * tolerance) / 2f && point.y >= center.y - h / 2f);
         return (xGood && yGood);
     }
 

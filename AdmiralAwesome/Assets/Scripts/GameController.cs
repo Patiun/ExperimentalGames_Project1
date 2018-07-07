@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour {
     public Text gameOverScore;
     public FirstPersonController fpc;
 
+    public int waveNumber;
+
     private int scoreAmount;
     private float healthPercentage;
 
