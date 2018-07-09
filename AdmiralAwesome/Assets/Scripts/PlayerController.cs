@@ -10,15 +10,22 @@ public class PlayerController : MonoBehaviour {
     public float regenRate;
     public float regenLockout;
     public bool regening;
+    public bool boosted;
+    public float boostDuration;
+    public float originalSpeed;
+    public float boostSpeed;
+    public UnityStandardAssets.Characters.FirstPerson.FirstPersonController fpc;
 
     private float nextRegenTime;
     private float regenStartTime;
+    private float boostOff;
     private GameController game;
 
 	// Use this for initialization
 	void Start () {
         health = maxHealth;
         game = GameController._sharedInstance;
+        originalSpeed = fpc.m_WalkSpeed;
 	}
 	
 	// Update is called once per frame
@@ -35,6 +42,14 @@ public class PlayerController : MonoBehaviour {
             {
                 AddHP(1);
                 nextRegenTime = Time.time + 1f / regenRate;
+            }
+        }
+        if (boosted)
+        {
+            if (Time.time > boostOff)
+            {
+                boosted = false;
+                fpc.m_WalkSpeed = originalSpeed;
             }
         }
     }
@@ -78,8 +93,11 @@ public class PlayerController : MonoBehaviour {
         game.GameOver();
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void SpeedBoost()
     {
-        
+        Debug.Log("!!!!!!");
+        boosted = true;
+        fpc.m_WalkSpeed = boostSpeed;
+        boostOff = Time.time + boostDuration;
     }
 }

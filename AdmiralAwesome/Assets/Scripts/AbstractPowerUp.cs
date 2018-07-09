@@ -10,7 +10,7 @@ public abstract class AbstractPowerUp : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	protected void Update () {
+        transform.LookAt(Camera.main.transform);
 	}
 }
