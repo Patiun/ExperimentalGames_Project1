@@ -26,6 +26,9 @@ public class Powerup_Candy : AbstractPowerUp, ICollectable, IPooledObject
 
     public void OnObjectSpawn()
     {
-        
+        if (pc == null)
+        {
+            pc = GameObject.FindObjectOfType<PlayerController>();
+        }
     }
 }

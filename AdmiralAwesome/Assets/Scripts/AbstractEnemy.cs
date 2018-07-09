@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public abstract class AbstractEnemy : MonoBehaviour {
 
+    public bool canDropPowerup;
+    public List<string> droppableObjects;
+    public float dropRate;
     public Vector3 p1, p2, p3, p4;
     private GameObject g1, g2, g3, g4;
     protected SpriteRenderer spriteRenderer;
@@ -71,5 +74,17 @@ public abstract class AbstractEnemy : MonoBehaviour {
         p4 = Camera.main.WorldToScreenPoint(g4.transform.position);
         p4.z = distFromCamera;
         */
+    }
+    
+    protected void DropPowerup()
+    {
+        if (canDropPowerup)
+        {
+            if (Random.Range(0,100f) < dropRate)
+            {
+                int i = Random.Range(0, droppableObjects.Count);
+                GameObject powerUp = ObjectPooler._sharedInstance.SpawnFromPool(droppableObjects[i], transform.position, Quaternion.identity);
+            }
+        }
     }
 }

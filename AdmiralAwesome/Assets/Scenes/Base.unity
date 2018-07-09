@@ -687,7 +687,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1135407939168832, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
@@ -1340,7 +1340,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1135407939168832, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
@@ -2038,6 +2038,12 @@ MonoBehaviour:
   - tag: Explosion
     prefab: {fileID: 1411688930675696, guid: e16e4faaef3115c43974fc3cf4bc06ac, type: 2}
     size: 400
+  - tag: Coin
+    prefab: {fileID: 1524053594234130, guid: c401e6e536ff0f1449544409f5425a56, type: 2}
+    size: 150
+  - tag: Candy
+    prefab: {fileID: 1857518586248126, guid: 3b0cd3e921abeab4ab4b7cc6103ebca6, type: 2}
+    size: 150
 --- !u!4 &1891482689
 Transform:
   m_ObjectHideFlags: 0
@@ -2476,7 +2482,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1135407939168832, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
@@ -2541,7 +2547,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1135407939168832, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
