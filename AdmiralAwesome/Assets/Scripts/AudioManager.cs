@@ -12,7 +12,8 @@ public class AudioManager : MonoBehaviour
 	public Sound[] sounds;
     public String[] backgroundMusic;
 
-    private int curBackgroundTrack;
+    private int curBackgroundTrack = -1;
+    private AudioSource curMusic;
 
 	void Awake()
 	{
@@ -58,8 +59,30 @@ public class AudioManager : MonoBehaviour
 		s.source.Play();
 	}
 
+    private void Update()
+    {
+        if (!curMusic.isPlaying)
+        {
+            PlayBackgroundMusic();
+        }
+    }
+
     public void PlayBackgroundMusic()
     {
+        int i = 0;
+        if (backgroundMusic.Length > 1)
+        {
+            i = UnityEngine.Random.Range(0, backgroundMusic.Length);
+            if (i == curBackgroundTrack)
+            {
+                PlayBackgroundMusic();
+                return;
+            }
+        }
+        curBackgroundTrack = i;
+        String sound = backgroundMusic[curBackgroundTrack];
+        Sound s = Array.Find(sounds, item => item.name == sound);
+        curMusic = s.source;
         Play(backgroundMusic[curBackgroundTrack]);
     }
 
