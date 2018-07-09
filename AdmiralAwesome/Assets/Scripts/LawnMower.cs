@@ -28,6 +28,7 @@ public class LawnMower : AbstractEnemy, iSquashable, IPooledObject {
     public void Squash()
     {
         pooler.SpawnFromPool("Explosion", transform.position + transform.forward, Quaternion.identity);
+        AudioManager.instance.Play("ExplosionLM");
         Detonate();
         gameObject.SetActive(false);
     }
