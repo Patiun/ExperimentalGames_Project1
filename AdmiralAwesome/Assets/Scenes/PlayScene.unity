@@ -2085,6 +2085,11 @@ Prefab:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 224979325077893862, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d658be66ed1e94bab3e01655b5ca33, type: 2}
   m_IsPrefabParent: 0
@@ -2328,22 +2333,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439324541}
---- !u!1 &1533113489 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1985199188471638, guid: a9e2fd01c587a794e9b0954f517faf31,
-    type: 2}
-  m_PrefabInternal: {fileID: 1824838098}
---- !u!114 &1533113490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1533113489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e038bf700cfa444fb16c6ef963be9f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1534152519
 Prefab:
   m_ObjectHideFlags: 0
@@ -2840,10 +2829,6 @@ Prefab:
     - target: {fileID: 4171398639422378, guid: a9e2fd01c587a794e9b0954f517faf31, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985199188471638, guid: a9e2fd01c587a794e9b0954f517faf31, type: 2}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9e2fd01c587a794e9b0954f517faf31, type: 2}

@@ -8,6 +8,8 @@ TextureImporter:
     21300006: AdmiralAwesome_spritesSheet_2_3
     21300008: AdmiralAwesome_spritesSheet_2_4
     21300010: AdmiralAwesome_spritesSheet_2_5
+    21300012: AdmiralAwesome_spritesSheet_2_6
+    21300014: AdmiralAwesome_spritesSheet_2_7
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -240,13 +242,53 @@ TextureImporter:
         width: 134
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 4f0f1f1ca24f5a74c910dfda2cffdcf3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AdmiralAwesome_spritesSheet_2_6
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 91
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0e562a51b8e6247820eef6e8985199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AdmiralAwesome_spritesSheet_2_7
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 91
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80925b159234f4e4da1b508a170c25ab
       vertices: []
       indices: 
       edges: []
