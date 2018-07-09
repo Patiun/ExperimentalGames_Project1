@@ -290,6 +290,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1318563681}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &103261610 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+    type: 2}
+  m_PrefabInternal: {fileID: 2114053208}
+  m_Script: {fileID: 11500000, guid: 18600fcfb67c2504abdcf46c2b2e5ade, type: 3}
+--- !u!114 &150863724 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+    type: 2}
+  m_PrefabInternal: {fileID: 804923222}
+  m_Script: {fileID: 11500000, guid: 18600fcfb67c2504abdcf46c2b2e5ade, type: 3}
 --- !u!114 &444507405 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114719028250433836, guid: 28d658be66ed1e94bab3e01655b5ca33,
@@ -686,7 +698,17 @@ Prefab:
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
       propertyPath: spawnRampingRate
-      value: 0.005
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: timeBetweenWaves
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: lengthOfWaves
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}
@@ -922,7 +944,15 @@ MonoBehaviour:
   GameOverMenu: {fileID: 1180038433}
   gameOverScore: {fileID: 1205878971}
   fpc: {fileID: 444507405}
+  waveActive: 0
   waveNumber: 0
+  spawners:
+  - {fileID: 1314676256}
+  - {fileID: 1906923735}
+  - {fileID: 150863724}
+  - {fileID: 103261610}
+  timeBetweenWaves: 12
+  lengthOfWaves: 6
 --- !u!114 &971387098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,11 +1354,27 @@ Prefab:
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
       propertyPath: spawnRampingRate
-      value: 0.005
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: timeBetweenWaves
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: lengthOfWaves
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1314676256 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+    type: 2}
+  m_PrefabInternal: {fileID: 1287902536}
+  m_Script: {fileID: 11500000, guid: 18600fcfb67c2504abdcf46c2b2e5ade, type: 3}
 --- !u!1001 &1318563681
 Prefab:
   m_ObjectHideFlags: 0
@@ -2070,6 +2116,12 @@ Transform:
   m_Father: {fileID: 2002284488}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906923735 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+    type: 2}
+  m_PrefabInternal: {fileID: 2097192484}
+  m_Script: {fileID: 11500000, guid: 18600fcfb67c2504abdcf46c2b2e5ade, type: 3}
 --- !u!1 &1911877866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,7 +2546,17 @@ Prefab:
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
       propertyPath: spawnRampingRate
-      value: 0.005
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: timeBetweenWaves
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: lengthOfWaves
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}
@@ -2549,7 +2611,17 @@ Prefab:
     - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
         type: 2}
       propertyPath: spawnRampingRate
-      value: 0.005
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: timeBetweenWaves
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831294590524174, guid: 3fe4c8703532f0649851314d45a5bc75,
+        type: 2}
+      propertyPath: lengthOfWaves
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fe4c8703532f0649851314d45a5bc75, type: 2}

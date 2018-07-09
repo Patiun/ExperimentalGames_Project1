@@ -21,10 +21,16 @@ public class GameController : MonoBehaviour {
     public Text gameOverScore;
     public FirstPersonController fpc;
 
+    public bool waveActive;
     public int waveNumber;
+    public List<EnemySpawner> spawners;
+    public float timeBetweenWaves;
+    public float lengthOfWaves;
 
     private int scoreAmount;
     private float healthPercentage;
+    private float nextWaveTime;
+    private float waveEndTime;
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +39,19 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (waveActive)
+        {
+            if (Time.time > waveEndTime)
+            {
+                EndWave();
+            }
+        } else
+        {
+            if (Time.time > nextWaveTime)
+            {
+                StartWave();
+            }
+        }
 	}
 
     public void AddScore(int amount)
@@ -66,5 +84,26 @@ public class GameController : MonoBehaviour {
         fpc.enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void EndWave()
+    {
+        waveActive = false;
+        nextWaveTime = Time.time + timeBetweenWaves;
+        foreach (EnemySpawner spawner in spawners)
+        {
+            spawner.EndWave();
+        }
+    }
+
+    public void StartWave()
+    {
+        waveActive = true;
+        waveNumber++;
+        waveEndTime = Time.time + lengthOfWaves;
+        foreach(EnemySpawner spawner in spawners)
+        {
+            spawner.StartWave();
+        }
     }
 }

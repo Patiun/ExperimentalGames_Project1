@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour {
         public float weight;
     }
 
+    public bool spawnerEnabled;
     public bool isSpawning;
     public List<EnemySpawnData> spawnData;
     public float spawnRate;
@@ -20,10 +21,12 @@ public class EnemySpawner : MonoBehaviour {
     private float[] floors;
     private float nextSpawnTime;
     private ObjectPooler pooler;
+    private GameController game;
 
 	// Use this for initialization
 	void Start () {
         pooler = ObjectPooler._sharedInstance;
+        game = GameController._sharedInstance;
         nextSpawnTime = Time.time;
 		foreach(EnemySpawnData data in spawnData)
         {
@@ -34,6 +37,7 @@ public class EnemySpawner : MonoBehaviour {
         {
             floors[i] = spawnData[i].weight / scale * 100f;
         }
+        isSpawning = false;
     }
 	
 	// Update is called once per frame
@@ -61,6 +65,15 @@ public class EnemySpawner : MonoBehaviour {
             }
         }
         nextSpawnTime = Time.time + 1f / spawnRate;
-        spawnRate += spawnRampingRate;
+    }
+
+    public void EndWave()
+    {
+        isSpawning = false;
+    }
+
+    public void StartWave()
+    {
+        isSpawning = true;
     }
 }
