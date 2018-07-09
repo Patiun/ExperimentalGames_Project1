@@ -1438,6 +1438,36 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224357550556720568, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 320.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224357550556720568, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 304
+      objectReference: {fileID: 0}
+    - target: {fileID: 224357550556720568, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 239.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224357550556720568, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -173
+      objectReference: {fileID: 0}
+    - target: {fileID: 224296825110991572, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 112.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 224296825110991572, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 108.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d658be66ed1e94bab3e01655b5ca33, type: 2}
   m_IsPrefabParent: 0
@@ -2044,7 +2074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdce1b3dae718445b256cd08c465a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionSize: 0.25
+  detectionSize: 0.15
   w: 200
   h: 220
   tolerance: 0.35
