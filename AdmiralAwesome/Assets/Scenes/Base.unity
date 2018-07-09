@@ -1092,8 +1092,8 @@ MonoBehaviour:
   - {fileID: 1906923735}
   - {fileID: 150863724}
   - {fileID: 103261610}
-  timeBetweenWaves: 12
-  lengthOfWaves: 6
+  timeBetweenWaves: 4
+  lengthOfWaves: 4
 --- !u!114 &971387098
 MonoBehaviour:
   m_ObjectHideFlags: 0

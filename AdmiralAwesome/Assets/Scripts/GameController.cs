@@ -31,10 +31,12 @@ public class GameController : MonoBehaviour {
     private float healthPercentage;
     private float nextWaveTime;
     private float waveEndTime;
+    private List<GameObject> waveEnemies;
 
 	// Use this for initialization
 	void Start () {
         _sharedInstance = this;
+        waveEnemies = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
@@ -43,7 +45,11 @@ public class GameController : MonoBehaviour {
         {
             if (Time.time > waveEndTime)
             {
-                EndWave();
+                StopSpawners();
+                if (CheckWaveIsClearead())
+                {
+                    EndWave();
+                }
             }
         } else
         {
@@ -76,6 +82,26 @@ public class GameController : MonoBehaviour {
         }*/
     }
 
+    private bool CheckWaveIsClearead()
+    {
+        foreach(GameObject enemy in waveEnemies)
+        {
+            if (enemy.activeInHierarchy)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void AddToWave(GameObject enemy)
+    {
+        if (!waveEnemies.Contains(enemy))
+        {
+            waveEnemies.Add(enemy);
+        }
+    }
+
     public void GameOver()
     {
         Time.timeScale = 0f;
@@ -86,14 +112,19 @@ public class GameController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void EndWave()
+    private void StopSpawners()
     {
-        waveActive = false;
-        nextWaveTime = Time.time + timeBetweenWaves;
         foreach (EnemySpawner spawner in spawners)
         {
             spawner.EndWave();
         }
+    }
+
+    public void EndWave()
+    {
+        waveActive = false;
+        nextWaveTime = Time.time + timeBetweenWaves;
+        StopSpawners();
     }
 
     public void StartWave()
@@ -101,6 +132,7 @@ public class GameController : MonoBehaviour {
         waveActive = true;
         waveNumber++;
         waveEndTime = Time.time + lengthOfWaves;
+        waveEnemies = new List<GameObject>();
         foreach(EnemySpawner spawner in spawners)
         {
             spawner.StartWave();

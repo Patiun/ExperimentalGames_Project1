@@ -61,6 +61,11 @@ public class EnemySpawner : MonoBehaviour {
             if (value < total)
             {
                 GameObject enemy = pooler.SpawnFromPool(spawnData[i].poolTag, transform.position, Quaternion.identity);
+                if (game == null)
+                {
+                    game = GameController._sharedInstance;
+                }
+                game.AddToWave(enemy);
                 break;
             }
         }
