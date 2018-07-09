@@ -83,6 +83,16 @@ MonoBehaviour:
     mixerGroup: {fileID: 243694913640595022, guid: 93e65d1dae1b3d94885416b6b1a5224d,
       type: 2}
     source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: a7c1a1f6212b29244b334db3f5aa6d2b, type: 3}
+    volume: 0.947
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 243495058774778760, guid: 93e65d1dae1b3d94885416b6b1a5224d,
+      type: 2}
+    source: {fileID: 0}
   backgroundMusic:
   - KillingInTheNameOf
   - Stricken

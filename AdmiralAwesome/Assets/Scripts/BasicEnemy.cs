@@ -62,6 +62,7 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
         }
         game.AddScore(scoreValue);
         pooler.SpawnFromPool("Explosion", transform.position + transform.forward, Quaternion.identity);
+        AudioManager.instance.Play("Explosion");
         DropPowerup();
         gameObject.SetActive(false);
     }
