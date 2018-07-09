@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour {
     public List<EnemySpawner> spawners;
     public float timeBetweenWaves;
     public float lengthOfWaves;
+    public float spawnRate;
+    public float spawnRateRamping;
 
     private int scoreAmount;
     private float healthPercentage;
@@ -37,6 +39,8 @@ public class GameController : MonoBehaviour {
 	void Start () {
         _sharedInstance = this;
         waveEnemies = new List<GameObject>();
+        waveActive = false;
+        nextWaveTime = Time.time + timeBetweenWaves;
 	}
 	
 	// Update is called once per frame
@@ -133,9 +137,11 @@ public class GameController : MonoBehaviour {
         waveNumber++;
         waveEndTime = Time.time + lengthOfWaves;
         waveEnemies = new List<GameObject>();
+        spawnRate += spawnRateRamping;
         foreach(EnemySpawner spawner in spawners)
         {
             spawner.StartWave();
+            spawner.spawnRate = spawnRate;
         }
     }
 }

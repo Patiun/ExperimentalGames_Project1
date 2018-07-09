@@ -1094,6 +1094,8 @@ MonoBehaviour:
   - {fileID: 103261610}
   timeBetweenWaves: 4
   lengthOfWaves: 4
+  spawnRate: 0.2
+  spawnRateRamping: 0.025
 --- !u!114 &971387098
 MonoBehaviour:
   m_ObjectHideFlags: 0

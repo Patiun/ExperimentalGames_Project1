@@ -15,7 +15,6 @@ public class EnemySpawner : MonoBehaviour {
     public bool isSpawning;
     public List<EnemySpawnData> spawnData;
     public float spawnRate;
-    public float spawnRampingRate;
 
     private float scale;
     private float[] floors;
