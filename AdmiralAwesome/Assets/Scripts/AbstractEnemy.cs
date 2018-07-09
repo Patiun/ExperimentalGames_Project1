@@ -26,7 +26,10 @@ public abstract class AbstractEnemy : MonoBehaviour {
         Debug.DrawLine(transform.position, p3);
         Debug.DrawLine(transform.position, p4);
 
-        agent.SetDestination(Camera.main.transform.position);
+        if (agent != null)
+        {
+            agent.SetDestination(Camera.main.transform.position);
+        }
         transform.LookAt(Camera.main.transform.position);
     }
 
@@ -54,8 +57,11 @@ public abstract class AbstractEnemy : MonoBehaviour {
         g4.transform.parent = transform;
         g4.transform.position = p4;
 
-        agent.Warp(transform.position);
-        agent.SetDestination(Camera.main.transform.position);
+        if (agent != null)
+        {
+            agent.Warp(transform.position);
+            agent.SetDestination(Camera.main.transform.position);
+        }
     }
 
     private void GeneratePoints()
