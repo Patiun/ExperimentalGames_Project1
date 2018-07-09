@@ -77,4 +77,9 @@ public class PlayerController : MonoBehaviour {
     {
         game.GameOver();
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }
