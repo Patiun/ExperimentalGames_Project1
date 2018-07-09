@@ -140,13 +140,14 @@ MonoBehaviour:
   p2: {x: 0, y: 0, z: 0}
   p3: {x: 0, y: 0, z: 0}
   p4: {x: 0, y: 0, z: 0}
-  allowedToShoot: 0
-  fireRate: 0
+  allowedToShoot: 1
+  fireRate: 0.2
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  fireRange: 0
+    m_Bits: 9729
+  fireRange: 9
   scoreValue: 200
+  projectile: Troll_Vommit
 --- !u!195 &195995391691123318
 NavMeshAgent:
   m_ObjectHideFlags: 1

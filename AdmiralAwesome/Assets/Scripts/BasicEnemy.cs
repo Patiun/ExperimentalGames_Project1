@@ -9,6 +9,7 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
     public LayerMask layerMask;
     public float fireRange;
     public int scoreValue;
+    public string projectile;
 
     private float nextFireTime;
     private ObjectPooler pooler;
@@ -75,7 +76,7 @@ public class BasicEnemy : AbstractEnemy, iSquashable, IPooledObject{
 
     private void Fire()
     {
-        pooler.SpawnFromPool("Bullet", transform.position+transform.forward, Quaternion.identity);
+        pooler.SpawnFromPool(projectile, transform.position+transform.forward, Quaternion.identity);
         nextFireTime = Time.time + 1f / fireRate;
     }
 }

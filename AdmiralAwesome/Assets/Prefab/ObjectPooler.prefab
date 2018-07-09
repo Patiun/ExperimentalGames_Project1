@@ -76,3 +76,9 @@ MonoBehaviour:
   - tag: LawnMower
     prefab: {fileID: 1048130638352352, guid: 1b9d6a108183ec14db54ff8fc50cd378, type: 2}
     size: 10
+  - tag: Bullet_Fast
+    prefab: {fileID: 1575955518847628, guid: 878ff1882e2ba54499c497394005cc11, type: 2}
+    size: 400
+  - tag: Troll_Vommit
+    prefab: {fileID: 1650877082819984, guid: f8c2647c5f7061c4085f36efa7955f76, type: 2}
+    size: 10

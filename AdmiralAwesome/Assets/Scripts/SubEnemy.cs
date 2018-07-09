@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class SubEnemy : AbstractEnemy, iSquashable {
 
+    public bool allowedToShoot;
+    public float fireRate;
+    public LayerMask layerMask;
+    public float fireRange;
+    public string projectile;
     public int scoreValue;
+
+    private float nextFireTime;
 
     private ObjectPooler pooler;
     private GameController game;
@@ -20,6 +27,28 @@ public class SubEnemy : AbstractEnemy, iSquashable {
 	// Update is called once per frame
 	new void Update () {
         base.Update();
+        if (allowedToShoot)
+        {
+            if (agent.remainingDistance <= fireRange)
+            {
+                agent.isStopped = true;
+            }
+            else
+            {
+                agent.isStopped = false;
+            }
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, layerMask.value))
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    if (Time.time > nextFireTime)
+                    {
+                        Fire();
+                    }
+                }
+            }
+        }
     }
 
     public bool CanSquash()
@@ -39,5 +68,11 @@ public class SubEnemy : AbstractEnemy, iSquashable {
         pooler.SpawnFromPool("Explosion", transform.position + transform.forward, Quaternion.identity);
         AudioManager.instance.Play("Explosion");
         gameObject.SetActive(false);
+    }
+
+    private void Fire()
+    {
+        pooler.SpawnFromPool(projectile, transform.position + transform.forward, Quaternion.identity);
+        nextFireTime = Time.time + 1f / fireRate;
     }
 }
