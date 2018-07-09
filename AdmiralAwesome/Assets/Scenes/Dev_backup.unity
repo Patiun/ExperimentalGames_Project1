@@ -3763,3 +3763,4 @@ MonoBehaviour:
   parts:
   - {fileID: 665083392}
   - {fileID: 292279880}
+  scoreValue: 0
