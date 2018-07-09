@@ -205,7 +205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &61174375
 Transform:
   m_ObjectHideFlags: 0
@@ -1225,6 +1225,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1205878969}
+--- !u!114 &1232097865 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114153459142319554, guid: 28d658be66ed1e94bab3e01655b5ca33,
+    type: 2}
+  m_PrefabInternal: {fileID: 1318563681}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1248990493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,10 +1411,62 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1879732888562864, guid: 28d658be66ed1e94bab3e01655b5ca33, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 114153459142319554, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114153459142319554, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153459142319554, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114114120227282152, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: handSprite
+      value: 
+      objectReference: {fileID: 1232097865}
+    - target: {fileID: 114114120227282152, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: startColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114114120227282152, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: startColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114114120227282152, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: startColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114114120227282152, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: overheatColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114114120227282152, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: overheatColor.g
+      value: 0.740566
+      objectReference: {fileID: 0}
+    - target: {fileID: 114114120227282152, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: overheatColor.b
+      value: 0.740566
+      objectReference: {fileID: 0}
+    - target: {fileID: 82955467022614430, guid: 28d658be66ed1e94bab3e01655b5ca33,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243495058774778760, guid: 93e65d1dae1b3d94885416b6b1a5224d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d658be66ed1e94bab3e01655b5ca33, type: 2}
   m_IsPrefabParent: 0
@@ -2085,7 +2143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1911877867
 Transform:
   m_ObjectHideFlags: 0

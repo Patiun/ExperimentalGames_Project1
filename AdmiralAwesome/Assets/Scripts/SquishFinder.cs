@@ -19,6 +19,9 @@ public class SquishFinder : MonoBehaviour {
     public float squishRate;
     public LayerMask layerMask;
     public float radius;
+    public Image handSprite;
+    public Color startColor;
+    public Color overheatColor;
 
     private float nextSquishTime;
 
