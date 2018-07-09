@@ -83,7 +83,11 @@ public class SquishFinder : MonoBehaviour {
                 DisableSquashIndicator();
             }
         }
-	}
+
+        if (!canSquish && Input.GetAxis("Fire1") != 0)  {
+            handAnim.SetTrigger("pinchFail"); //Anim
+        }
+    }
 
     public void Squash()
     {
