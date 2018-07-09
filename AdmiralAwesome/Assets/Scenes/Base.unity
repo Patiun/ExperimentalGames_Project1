@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit Game
+  m_Text: Main Menu
 --- !u!222 &51859299
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1404,6 +1404,10 @@ Prefab:
     - target: {fileID: 4566877667828746, guid: 28d658be66ed1e94bab3e01655b5ca33, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879732888562864, guid: 28d658be66ed1e94bab3e01655b5ca33, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d658be66ed1e94bab3e01655b5ca33, type: 2}

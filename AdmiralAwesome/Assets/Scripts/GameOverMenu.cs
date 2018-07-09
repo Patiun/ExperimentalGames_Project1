@@ -16,11 +16,11 @@ public class GameOverMenu : MonoBehaviour {
     }
 
     public void Exit() {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
