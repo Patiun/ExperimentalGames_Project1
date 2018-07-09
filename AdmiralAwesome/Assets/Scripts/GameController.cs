@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour {
     public GameObject GameOverMenu;
     public Text gameOverScore;
     public FirstPersonController fpc;
+    public Text waveText;
+    public Image waveIndicator;
 
     public bool waveActive;
     public int waveNumber;
@@ -33,6 +35,7 @@ public class GameController : MonoBehaviour {
     private float healthPercentage;
     private float nextWaveTime;
     private float waveEndTime;
+    private float timeElapsed;
     private List<GameObject> waveEnemies;
 
 	// Use this for initialization
@@ -41,7 +44,9 @@ public class GameController : MonoBehaviour {
         waveEnemies = new List<GameObject>();
         waveActive = false;
         nextWaveTime = Time.time + timeBetweenWaves;
-	}
+        waveText.enabled = false;
+        waveIndicator.fillAmount = 0f;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -60,6 +65,10 @@ public class GameController : MonoBehaviour {
             if (Time.time > nextWaveTime)
             {
                 StartWave();
+            } else
+            {
+                timeElapsed += Time.deltaTime;
+                waveIndicator.fillAmount = (timeElapsed / timeBetweenWaves);
             }
         }
 	}
@@ -129,6 +138,8 @@ public class GameController : MonoBehaviour {
         waveActive = false;
         nextWaveTime = Time.time + timeBetweenWaves;
         StopSpawners();
+        timeElapsed = 0;
+        waveText.enabled = false;
     }
 
     public void StartWave()
@@ -143,5 +154,8 @@ public class GameController : MonoBehaviour {
             spawner.StartWave();
             spawner.spawnRate = spawnRate;
         }
+        waveIndicator.fillAmount = 1;
+        waveText.text = "" + waveNumber;
+        waveText.enabled = true;
     }
 }

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 195995391691123318}
   m_Layer: 9
   m_Name: Giant_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
