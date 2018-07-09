@@ -95,7 +95,6 @@ public class PlayerController : MonoBehaviour {
 
     public void SpeedBoost()
     {
-        Debug.Log("!!!!!!");
         boosted = true;
         fpc.m_WalkSpeed = boostSpeed;
         boostOff = Time.time + boostDuration;
